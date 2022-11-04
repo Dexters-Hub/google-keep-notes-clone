@@ -1,0 +1,22 @@
+.grid {
+  display: flex;
+  width: calc(100% - 80px);
+  padding: 0 40px;
+  margin-left: auto;
+}
+
+@media (max-width: 576px) {
+  .grid {
+    width: calc(100% - 52px);
+    padding: 0 10px;
+  }
+}
+
+.col {
+  padding-left: 15px;
+  background-clip: padding-box;
+}
+
+.col>div {
+  margin-bottom: 15px;
+}
