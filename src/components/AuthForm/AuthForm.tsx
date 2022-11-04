@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { authService } from 'fbase';
 
-import Github from 'icons/github.svg';
 import Google from 'icons/google.svg';
 import {
   Container,
@@ -50,8 +49,7 @@ const AuthForm = ({ onClick }: AuthFormProp) => {
   const { email, password } = userInfo;
 
   const socialIcons: Icon[] = [
-    { title: 'Google', img: Google, bgColor: '#3B5998', name: 'google' },
-    { title: 'Github', img: Github, bgColor: '#211F1F', name: 'github' },
+    { title: 'Google', img: Google, bgColor: '', name: 'google' },
   ];
   const handleToggle = (): void => setNewAccout((prev: boolean) => !prev);
 
@@ -80,7 +78,7 @@ const AuthForm = ({ onClick }: AuthFormProp) => {
     <Container>
       <Form onSubmit={handleSubmit}>
         <FormTitle>Sign In</FormTitle>
-        <FormLabel htmlFor="email">Email Adress</FormLabel>
+        {/* <FormLabel htmlFor="email">Email Adress</FormLabel>
         <FormInput
           id="email"
           name="email"
@@ -99,22 +97,15 @@ const AuthForm = ({ onClick }: AuthFormProp) => {
           value={password}
           onChange={handleChange}
           required
-        />
-        <SubmitBtn
-          type="submit"
-          value={newAccount ? 'Create Account' : 'Sign In'}
-        />
-        {error && <span>{error}</span>}
-        <FormBtn onClick={handleToggle}>
-          {newAccount ? 'Sign In' : 'Create Account'}
-        </FormBtn>
+        /> */}
+
         <SocialsContainer>
-          <SocialLogInTitle>Or</SocialLogInTitle>
           <BtnContainer>
             {socialIcons.map((icon, i) => (
               <SocialIcon icon={icon} onClick={onClick} key={i} />
             ))}
           </BtnContainer>
+          <SocialLogInTitle>Google</SocialLogInTitle>
         </SocialsContainer>
       </Form>
     </Container>
